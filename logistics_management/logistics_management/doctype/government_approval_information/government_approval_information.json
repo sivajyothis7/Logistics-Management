@@ -1,0 +1,53 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-03-28 08:02:44.368098",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "approval_id",
+  "approval_type",
+  "column_break_q72d",
+  "approval_date",
+  "issuing_authority"
+ ],
+ "fields": [
+  {
+   "fieldname": "approval_id",
+   "fieldtype": "Data",
+   "label": "Approval ID"
+  },
+  {
+   "fieldname": "approval_type",
+   "fieldtype": "Data",
+   "label": "Approval Type"
+  },
+  {
+   "fieldname": "column_break_q72d",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "approval_date",
+   "fieldtype": "Date",
+   "label": "Approval Date"
+  },
+  {
+   "fieldname": "issuing_authority",
+   "fieldtype": "Data",
+   "label": "Issuing Authority"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-04-05 09:01:45.200480",
+ "modified_by": "Administrator",
+ "module": "Logistics Management",
+ "name": "Government Approval Information",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

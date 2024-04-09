@@ -1,0 +1,84 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-03-28 07:48:53.919569",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "shipment_id",
+  "estimated_arrival_date",
+  "voyage_number",
+  "port_of_loading",
+  "column_break_3ttz",
+  "vessel_name",
+  "actual_arrival_date",
+  "container_details",
+  "port_of_discharge"
+ ],
+ "fields": [
+  {
+   "fieldname": "shipment_id",
+   "fieldtype": "Link",
+   "label": "Shipment ID",
+   "options": "Direct Shipping"
+  },
+  {
+   "fieldname": "vessel_name",
+   "fieldtype": "Data",
+   "label": "Vessel Name"
+  },
+  {
+   "fetch_from": "shipment_id.voyage_no",
+   "fieldname": "voyage_number",
+   "fieldtype": "Data",
+   "label": "Voyage Number"
+  },
+  {
+   "fetch_from": "shipment_id.loading_port",
+   "fieldname": "port_of_loading",
+   "fieldtype": "Data",
+   "label": "Port of Loading"
+  },
+  {
+   "fieldname": "column_break_3ttz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "shipment_id.discharging_port",
+   "fieldname": "port_of_discharge",
+   "fieldtype": "Data",
+   "label": "Port of Discharge"
+  },
+  {
+   "fetch_from": "shipment_id.expected_receive_date",
+   "fieldname": "estimated_arrival_date",
+   "fieldtype": "Date",
+   "label": "Estimated Arrival Date"
+  },
+  {
+   "fetch_from": "shipment_id.actual_receive_date",
+   "fieldname": "actual_arrival_date",
+   "fieldtype": "Date",
+   "label": "Actual Arrival Date"
+  },
+  {
+   "fetch_from": ".",
+   "fieldname": "container_details",
+   "fieldtype": "Data",
+   "label": "Container Details"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-04-05 13:17:21.652224",
+ "modified_by": "Administrator",
+ "module": "Logistics Management",
+ "name": "Co-loaded Shipment Information",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -8,7 +8,13 @@ app_license = "mit"
 
 # Includes in <head>
 # ------------------
-
+fixtures = [{
+				"doctype": "Workflow"
+			},
+			{
+				"doctype": "Workflow State"
+			}
+	]
 # include js, css files in header of desk.html
 # app_include_css = "/assets/logistics_management/css/logistics_management.css"
 # app_include_js = "/assets/logistics_management/js/logistics_management.js"
@@ -129,7 +135,13 @@ app_license = "mit"
 # 		"on_trash": "method"
 # 	}
 # }
-
+doc_events = {
+    'Direct Shipping': {
+        'validate': [
+            'logistics_management.logistics_management.doctype.direct_shipping.direct_shipping.validate'
+        ],
+  }
+}
 # Scheduled Tasks
 # ---------------
 

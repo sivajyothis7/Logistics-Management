@@ -1,0 +1,60 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-03-28 07:52:17.927925",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "customs_clearance_number",
+  "date_cleared",
+  "clearance_status",
+  "column_break_trph",
+  "duty_paid",
+  "tax_paid"
+ ],
+ "fields": [
+  {
+   "fieldname": "customs_clearance_number",
+   "fieldtype": "Data",
+   "label": "Customs Clearance Number"
+  },
+  {
+   "fieldname": "date_cleared",
+   "fieldtype": "Date",
+   "label": "Date Cleared"
+  },
+  {
+   "fieldname": "clearance_status",
+   "fieldtype": "Select",
+   "label": "Clearance Status",
+   "options": "Cleared\nNot Cleared"
+  },
+  {
+   "fieldname": "column_break_trph",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "duty_paid",
+   "fieldtype": "Currency",
+   "label": "Duty Paid"
+  },
+  {
+   "fieldname": "tax_paid",
+   "fieldtype": "Currency",
+   "label": "Tax Paid"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-03-28 07:56:03.361915",
+ "modified_by": "Administrator",
+ "module": "Logistics Management",
+ "name": "Customs Clearance Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

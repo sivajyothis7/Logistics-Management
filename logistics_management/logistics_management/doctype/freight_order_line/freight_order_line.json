@@ -1,0 +1,88 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-03-12 10:40:56.302641",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "container",
+  "items",
+  "pricing",
+  "billing_on",
+  "gross_weight",
+  "volume",
+  "price",
+  "sale_price"
+ ],
+ "fields": [
+  {
+   "fieldname": "container",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Container",
+   "options": "Containers"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Items",
+   "options": "Item"
+  },
+  {
+   "fieldname": "pricing",
+   "fieldtype": "Link",
+   "label": "Pricing",
+   "options": "Pricing  List"
+  },
+  {
+   "fieldname": "billing_on",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Billing On",
+   "options": "Volume\nWeight"
+  },
+  {
+   "depends_on": "eval:doc.billing_on == \"Weight\"",
+   "fetch_from": "pricing.weight_price",
+   "fetch_if_empty": 1,
+   "fieldname": "gross_weight",
+   "fieldtype": "Float",
+   "label": "Gross Weight"
+  },
+  {
+   "depends_on": "eval:doc.billing_on == \"Volume\"",
+   "fetch_from": "pricing.volume_price",
+   "fetch_if_empty": 1,
+   "fieldname": "volume",
+   "fieldtype": "Float",
+   "label": "Volume"
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Float",
+   "label": "Price"
+  },
+  {
+   "fieldname": "sale_price",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Sale Price",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-03-12 10:40:56.302641",
+ "modified_by": "Administrator",
+ "module": "Logistics Management",
+ "name": "Freight Order Line",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

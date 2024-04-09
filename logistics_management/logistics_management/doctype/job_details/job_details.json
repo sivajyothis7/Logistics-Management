@@ -1,0 +1,286 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "JD.#####",
+ "creation": "2024-03-28 08:06:00.823727",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "job_id",
+  "job_status",
+  "costing_status",
+  "invoice_status",
+  "purchase_status",
+  "column_break_pp3m",
+  "created_user",
+  "created_date",
+  "modified_user",
+  "modified_date",
+  "bl_number",
+  "section_break_iipu",
+  "cargo_details",
+  "government_approval_information_section",
+  "approval_id",
+  "approval_type",
+  "column_break_51c5",
+  "approval_date",
+  "issuing_authority",
+  "vendor_receipts_section",
+  "receipt_number",
+  "date_received",
+  "vendor_name",
+  "column_break_lwj7",
+  "amount",
+  "payment_method",
+  "tab_2_tab",
+  "section_break_1fli",
+  "co_loaded_shipment_information",
+  "delivery_order_information_section",
+  "delivery_order_number",
+  "shipper_name",
+  "quantity",
+  "volume",
+  "pickup_location",
+  "column_break_hpnp",
+  "date_generated",
+  "consignee_name",
+  "weight",
+  "cargo_description",
+  "delivery_location"
+ ],
+ "fields": [
+  {
+   "fieldname": "job_id",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "job_status",
+   "fieldtype": "Select",
+   "label": "Job Status",
+   "options": "Pending\nIn Progress\nCompleted\nOn Hold\nCancelled"
+  },
+  {
+   "fieldname": "costing_status",
+   "fieldtype": "Select",
+   "label": "Costing Status",
+   "options": "Pending\nIn Progress\nCompleted"
+  },
+  {
+   "fieldname": "invoice_status",
+   "fieldtype": "Select",
+   "label": "Invoice Status",
+   "options": "Pending\nIn Progress\nCompleted"
+  },
+  {
+   "fieldname": "purchase_status",
+   "fieldtype": "Select",
+   "label": "Purchase Status",
+   "options": "Pending\nIn Progress\nCompleted"
+  },
+  {
+   "fieldname": "column_break_pp3m",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "created_user",
+   "fieldtype": "Link",
+   "label": "Created User",
+   "options": "User"
+  },
+  {
+   "fieldname": "created_date",
+   "fieldtype": "Date",
+   "label": "Created Date"
+  },
+  {
+   "fieldname": "modified_user",
+   "fieldtype": "Link",
+   "label": "Modified User",
+   "options": "User"
+  },
+  {
+   "fieldname": "modified_date",
+   "fieldtype": "Date",
+   "label": "Modified Date"
+  },
+  {
+   "fieldname": "bl_number",
+   "fieldtype": "Data",
+   "label": "BL Number"
+  },
+  {
+   "fieldname": "co_loaded_shipment_information",
+   "fieldtype": "Table",
+   "label": "Co loaded Shipment Information",
+   "options": "Co-loaded Shipment Information"
+  },
+  {
+   "fieldname": "cargo_details",
+   "fieldtype": "Table",
+   "label": "Cargo Details",
+   "options": "Cargo Details"
+  },
+  {
+   "fieldname": "section_break_1fli",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_iipu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "tab_2_tab",
+   "fieldtype": "Tab Break",
+   "label": "Other Information"
+  },
+  {
+   "fieldname": "government_approval_information_section",
+   "fieldtype": "Section Break",
+   "label": "Government Approval Information"
+  },
+  {
+   "fieldname": "approval_id",
+   "fieldtype": "Data",
+   "label": "Approval ID"
+  },
+  {
+   "fieldname": "approval_type",
+   "fieldtype": "Data",
+   "label": "Approval Type"
+  },
+  {
+   "fieldname": "approval_date",
+   "fieldtype": "Date",
+   "label": "Approval Date"
+  },
+  {
+   "fieldname": "issuing_authority",
+   "fieldtype": "Data",
+   "label": "Issuing Authority"
+  },
+  {
+   "fieldname": "column_break_51c5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "delivery_order_information_section",
+   "fieldtype": "Section Break",
+   "label": "Delivery Order Information"
+  },
+  {
+   "fieldname": "delivery_order_number",
+   "fieldtype": "Data",
+   "label": "Delivery Order Number"
+  },
+  {
+   "fieldname": "shipper_name",
+   "fieldtype": "Data",
+   "label": "Shipper Name"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "label": "Quantity"
+  },
+  {
+   "fieldname": "volume",
+   "fieldtype": "Float",
+   "label": "Volume"
+  },
+  {
+   "fieldname": "pickup_location",
+   "fieldtype": "Data",
+   "label": "Pickup Location"
+  },
+  {
+   "fieldname": "date_generated",
+   "fieldtype": "Date",
+   "label": "Date Generated"
+  },
+  {
+   "fieldname": "consignee_name",
+   "fieldtype": "Data",
+   "label": "Consignee Name"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "label": "Weight"
+  },
+  {
+   "fieldname": "cargo_description",
+   "fieldtype": "Data",
+   "label": "Cargo Description"
+  },
+  {
+   "fieldname": "delivery_location",
+   "fieldtype": "Data",
+   "label": "Delivery Location"
+  },
+  {
+   "fieldname": "column_break_hpnp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vendor_receipts_section",
+   "fieldtype": "Section Break",
+   "label": "Vendor Receipts"
+  },
+  {
+   "fieldname": "receipt_number",
+   "fieldtype": "Data",
+   "label": "Receipt Number"
+  },
+  {
+   "fieldname": "date_received",
+   "fieldtype": "Date",
+   "label": "Date Received"
+  },
+  {
+   "fieldname": "vendor_name",
+   "fieldtype": "Data",
+   "label": "Vendor Name"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Float",
+   "label": "Amount"
+  },
+  {
+   "fieldname": "payment_method",
+   "fieldtype": "Data",
+   "label": "Payment Method"
+  },
+  {
+   "fieldname": "column_break_lwj7",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-04-08 08:07:02.293300",
+ "modified_by": "Administrator",
+ "module": "Logistics Management",
+ "name": "Job Details",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
