@@ -11,6 +11,7 @@
   "costing_status",
   "invoice_status",
   "purchase_status",
+  "sales_person",
   "column_break_pp3m",
   "created_user",
   "created_date",
@@ -256,11 +257,23 @@
   {
    "fieldname": "column_break_lwj7",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sales_person",
+   "fieldtype": "Link",
+   "label": "Sales Partner",
+   "options": "Sales Partner"
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-04-08 08:07:02.293300",
+ "links": [
+  {
+   "group": "Invoice Details",
+   "link_doctype": "Sales Invoice",
+   "link_fieldname": "custom_job_number"
+  }
+ ],
+ "modified": "2024-04-09 13:28:16.838119",
  "modified_by": "Administrator",
  "module": "Logistics Management",
  "name": "Job Details",
