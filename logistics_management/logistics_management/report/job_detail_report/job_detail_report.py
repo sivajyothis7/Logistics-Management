@@ -40,17 +40,18 @@ def get_columns():
             'options': 'Sales Partner',
             'width': '200'
         },
-        # {
-        #     'fieldname': 'company',
-        #     'label': _('Company'),
-        #     'fieldtype': 'Link',
-        #     'options': 'Company',
-        #     'default': 'Your Default Company'
-        # }
+        {
+            'fieldname': 'amount',
+            'label': _('Amount'),
+            'fieldtype': 'Float',
+            'width': '100'
+
+
+        }
     ]
 
 def get_data(filters):
-    fields = ['name','job_id', 'job_status', 'created_user', 'sales_person']
+    fields = ['name','job_id', 'job_status', 'created_user', 'sales_person','amount']
 
     data = frappe.get_all('Job Details', fields=fields, filters=filters)
 
