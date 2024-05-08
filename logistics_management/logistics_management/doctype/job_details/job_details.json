@@ -6,12 +6,40 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "general_section",
+  "job_type",
+  "mawbl_number",
+  "mbl_number",
+  "container_no",
+  "vehicle_no",
+  "column_break_mbo6",
+  "mode_of_transport",
+  "hawbl_number",
+  "hbl_number",
+  "invoice_no",
+  "section_break_qgln",
   "job_id",
+  "pol",
+  "sales_person",
+  "column_break_uzva",
+  "date",
+  "pod",
+  "contact_number",
+  "section_break_eoyb",
+  "eta_date",
+  "gross_weight",
+  "bayan_number",
+  "column_break_m0dx",
+  "net_weight",
+  "vessel_name",
+  "number_of_packages",
+  "section_break_eohf",
   "job_status",
   "costing_status",
   "invoice_status",
   "purchase_status",
-  "sales_person",
+  "job_end_date",
+  "job_end_time",
   "column_break_pp3m",
   "created_user",
   "created_date",
@@ -197,7 +225,7 @@
   },
   {
    "fieldname": "date_generated",
-   "fieldtype": "Date",
+   "fieldtype": "Datetime",
    "label": "Date Generated"
   },
   {
@@ -261,8 +289,151 @@
   {
    "fieldname": "sales_person",
    "fieldtype": "Link",
-   "label": "Sales Partner",
-   "options": "Sales Partner"
+   "label": "Sales Person",
+   "options": "Sales Person"
+  },
+  {
+   "fieldname": "general_section",
+   "fieldtype": "Section Break",
+   "label": "General"
+  },
+  {
+   "fieldname": "job_type",
+   "fieldtype": "Select",
+   "label": "Job Type",
+   "options": "\nIMPORT\nEXPORT\nRE-EXPORT\nCONSOLE\nWARE HOUSING\nLOCAL"
+  },
+  {
+   "fieldname": "section_break_eohf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_mbo6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mode_of_transport",
+   "fieldtype": "Select",
+   "label": "Mode of Transport",
+   "options": "\nAIR\nSEA\nROAD"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_transport=='AIR'",
+   "fieldname": "mawbl_number",
+   "fieldtype": "Data",
+   "label": "MAWBL Number"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_transport=='SEA'",
+   "fieldname": "mbl_number",
+   "fieldtype": "Data",
+   "label": "MBL Number"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_transport=='SEA'",
+   "fieldname": "container_no",
+   "fieldtype": "Data",
+   "label": "Container No"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_transport=='ROAD'",
+   "fieldname": "vehicle_no",
+   "fieldtype": "Data",
+   "label": "Vehicle No"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_transport=='AIR'",
+   "fieldname": "hawbl_number",
+   "fieldtype": "Data",
+   "label": "HAWBL Number"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_transport=='SEA'",
+   "fieldname": "hbl_number",
+   "fieldtype": "Data",
+   "label": "HBL Number "
+  },
+  {
+   "depends_on": "eval:doc.mode_of_transport=='ROAD'",
+   "fieldname": "invoice_no",
+   "fieldtype": "Data",
+   "label": "Invoice No"
+  },
+  {
+   "fieldname": "section_break_qgln",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "pol",
+   "fieldtype": "Data",
+   "label": "POL"
+  },
+  {
+   "fieldname": "pod",
+   "fieldtype": "Data",
+   "label": "POD"
+  },
+  {
+   "fieldname": "column_break_uzva",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_eoyb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "eta_date",
+   "fieldtype": "Date",
+   "label": "ETA (DATE) "
+  },
+  {
+   "fieldname": "net_weight",
+   "fieldtype": "Data",
+   "label": "Net Weight"
+  },
+  {
+   "fieldname": "gross_weight",
+   "fieldtype": "Data",
+   "label": "Gross Weight"
+  },
+  {
+   "fieldname": "bayan_number",
+   "fieldtype": "Data",
+   "label": "Bayan Number"
+  },
+  {
+   "fieldname": "vessel_name",
+   "fieldtype": "Data",
+   "label": "Vessel Name"
+  },
+  {
+   "fieldname": "column_break_m0dx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Phone",
+   "label": "Contact Number"
+  },
+  {
+   "fieldname": "number_of_packages",
+   "fieldtype": "Data",
+   "label": "Number of Packages"
+  },
+  {
+   "fieldname": "job_end_date",
+   "fieldtype": "Date",
+   "label": "Job End Date"
+  },
+  {
+   "fieldname": "job_end_time",
+   "fieldtype": "Time",
+   "label": "Job End Time"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -271,9 +442,14 @@
    "group": "Invoice Details",
    "link_doctype": "Sales Invoice",
    "link_fieldname": "custom_job_number"
+  },
+  {
+   "group": "Rental",
+   "link_doctype": "Warehouse Rental",
+   "link_fieldname": "job_details"
   }
  ],
- "modified": "2024-04-09 13:28:16.838119",
+ "modified": "2024-05-07 12:55:33.925574",
  "modified_by": "Administrator",
  "module": "Logistics Management",
  "name": "Job Details",

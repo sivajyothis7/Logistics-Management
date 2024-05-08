@@ -33,6 +33,7 @@
    "label": "General"
   },
   {
+   "fetch_from": "job_details.job_id",
    "fieldname": "customer",
    "fieldtype": "Link",
    "label": "Customer",
@@ -128,7 +129,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-04-08 07:49:26.240769",
+ "modified": "2024-05-07 08:47:13.353659",
  "modified_by": "Administrator",
  "module": "Logistics Management",
  "name": "Warehouse Rental",
