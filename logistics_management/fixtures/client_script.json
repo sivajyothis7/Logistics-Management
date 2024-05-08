@@ -1,0 +1,35 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Sales Order",
+  "enabled": 0,
+  "modified": "2024-05-08 07:10:33.734500",
+  "module": null,
+  "name": "List view",
+  "script": "frappe.set_route('List', 'Sales Order', 'List', {'Sales Team.sales_person': 'Sales Team'});\n",
+  "view": "List"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Sales Order",
+  "enabled": 0,
+  "modified": "2024-04-24 18:58:31.474765",
+  "module": null,
+  "name": "type",
+  "script": "frappe.listview_settings['Sales Order'] = {\n    onload: function(listview) {\n        var df = {\n            fieldname: 'sales_person', \n            label: \"Sales Person\",\n            fieldtype: \"Link\", \n            options: \"Sales Person\",\n            onchange: function() {\n                listview.start = 0;\n                listview.refresh();\n                listview.on_filter_change();\n            }\n        };\n        listview.page.add_field(df);\n    }\n};\n",
+  "view": "List"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Sales Order",
+  "enabled": 0,
+  "modified": "2024-05-08 07:10:27.735543",
+  "module": null,
+  "name": "test",
+  "script": "// frappe.ui.form.on('Sales Order', {\n//     refresh: function(frm) {\n//         // Function to hide the edit button\n//         var hideEditButton = function() {\n//             cur_frm.fields_dict['items'].grid.wrapper.find('.btn-open-row').hide();\n//         };\n\n//         // Hide the edit button initially\n//         hideEditButton();\n\n//         // Bind the function to the grid-render event\n//         frm.fields_dict['items'].grid.on('grid-render', function() {\n//             hideEditButton(); // Hide the edit button whenever the grid is rendered\n//         });\n//     }\n// });\nfrappe.ui.form.on('Sales Order', {\n    refresh: function(frm) {\n        var hideButton = function() {\n            cur_frm.fields_dict['items'].grid.wrapper.find('.btn-open-row').hide();\n        };\n\n        hideButton();\n\n        $(document).on('grid-row-render', function(event) {\n            hideButton();\n        });\n    }\n});\n\n\n\n\n",
+  "view": "Form"
+ }
+]
