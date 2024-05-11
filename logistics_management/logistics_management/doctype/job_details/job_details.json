@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "JD.#####",
+ "autoname": "JD.####",
  "creation": "2024-03-28 08:06:00.823727",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -449,7 +449,7 @@
    "link_fieldname": "job_details"
   }
  ],
- "modified": "2024-05-07 12:55:33.925574",
+ "modified": "2024-05-11 23:19:07.069990",
  "modified_by": "Administrator",
  "module": "Logistics Management",
  "name": "Job Details",

@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "POD.####",
  "creation": "2024-05-07 12:32:34.653125",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -225,10 +226,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-11 21:42:47.279633",
+ "modified": "2024-05-11 23:18:15.919315",
  "modified_by": "Administrator",
  "module": "Logistics Management",
  "name": "POD",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
