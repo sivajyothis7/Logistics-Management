@@ -13,6 +13,7 @@
   "contact_person",
   "delivery_location",
   "net_weight",
+  "sales_person",
   "column_break_xewu",
   "date",
   "mode_of_transport",
@@ -146,7 +147,7 @@
    "label": "Description of Goods"
   },
   {
-   "fetch_from": "job_details.contact_number",
+   "fetch_from": ".contact_number",
    "fieldname": "contact_number",
    "fieldtype": "Data",
    "label": "Contact Number"
@@ -158,7 +159,7 @@
    "label": "Number of Packages"
   },
   {
-   "fetch_from": "job_details.sales_person",
+   "fetch_from": ".sales_person",
    "fieldname": "contact_person",
    "fieldtype": "Data",
    "label": "Contact Person"
@@ -214,11 +215,17 @@
    "fieldname": "date",
    "fieldtype": "Date",
    "label": "Date"
+  },
+  {
+   "fetch_from": "job_details.sales_person",
+   "fieldname": "sales_person",
+   "fieldtype": "Data",
+   "label": "Sales Person"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-08 09:12:00.188828",
+ "modified": "2024-05-11 21:42:47.279633",
  "modified_by": "Administrator",
  "module": "Logistics Management",
  "name": "POD",
