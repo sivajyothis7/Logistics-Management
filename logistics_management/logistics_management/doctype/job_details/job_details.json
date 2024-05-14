@@ -1,12 +1,13 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "JD.####",
+ "autoname": "naming_series:",
  "creation": "2024-03-28 08:06:00.823727",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "general_section",
+  "naming_series",
   "job_type",
   "mawbl_number",
   "mbl_number",
@@ -434,6 +435,12 @@
    "fieldname": "job_end_time",
    "fieldtype": "Time",
    "label": "Job End Time"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "HSM\nHSMS"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -444,16 +451,21 @@
    "link_fieldname": "custom_job_number"
   },
   {
-   "group": "Rental",
+   "group": "General",
    "link_doctype": "Warehouse Rental",
+   "link_fieldname": "job_details"
+  },
+  {
+   "group": "General",
+   "link_doctype": "POD",
    "link_fieldname": "job_details"
   }
  ],
- "modified": "2024-05-11 23:19:07.069990",
+ "modified": "2024-05-14 12:58:48.546246",
  "modified_by": "Administrator",
  "module": "Logistics Management",
  "name": "Job Details",
- "naming_rule": "Expression (old style)",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {
