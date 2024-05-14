@@ -440,7 +440,7 @@
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Naming Series",
-   "options": "\nHSM.-\nHSMS.-"
+   "options": "\nHSM.-\nJD.-"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -461,7 +461,7 @@
    "link_fieldname": "job_details"
   }
  ],
- "modified": "2024-05-14 20:34:29.181556",
+ "modified": "2024-05-14 20:43:01.175910",
  "modified_by": "Administrator",
  "module": "Logistics Management",
  "name": "Job Details",
