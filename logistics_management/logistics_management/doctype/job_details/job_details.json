@@ -303,7 +303,7 @@
    "fieldname": "job_type",
    "fieldtype": "Select",
    "label": "Job Type",
-   "options": "\nIMPORT\nEXPORT\nRE-EXPORT\nCONSOLE\nWARE HOUSING\nLOCAL"
+   "options": "\nIMPORT\nEXPORT\nRE-EXPORT\nCONSOLE\nWARE HOUSING\nLCL"
   },
   {
    "fieldname": "section_break_eohf",
@@ -318,7 +318,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Mode of Transport",
-   "options": "\nAIR\nSEA\nROAD",
+   "options": "\nAIR\nSEA\nLAND",
    "reqd": 1
   },
   {
@@ -475,7 +475,7 @@
    "link_fieldname": "job_details"
   }
  ],
- "modified": "2024-05-14 22:06:25.294406",
+ "modified": "2024-05-16 07:14:14.727066",
  "modified_by": "Administrator",
  "module": "Logistics Management",
  "name": "Job Details",
