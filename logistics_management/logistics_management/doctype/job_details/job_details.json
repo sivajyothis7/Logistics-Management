@@ -18,6 +18,8 @@
   "hawbl_number",
   "hbl_number",
   "invoice_no",
+  "project",
+  "project_data",
   "section_break_qgln",
   "job_id",
   "pol",
@@ -89,6 +91,8 @@
   {
    "fieldname": "job_status",
    "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Job Status",
    "options": "Pending\nIn Progress\nCompleted\nOn Hold\nCancelled"
   },
@@ -317,6 +321,7 @@
    "fieldname": "mode_of_transport",
    "fieldtype": "Select",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Mode of Transport",
    "options": "\nAIR\nSEA\nLAND",
    "reqd": 1
@@ -455,6 +460,20 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fetch_from": "project.project_name",
+   "fieldname": "project_data",
+   "fieldtype": "Data",
+   "label": "Project Data"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -473,9 +492,14 @@
    "group": "General",
    "link_doctype": "POD",
    "link_fieldname": "job_details"
+  },
+  {
+   "group": "Invoice Details",
+   "link_doctype": "Purchase Invoice",
+   "link_fieldname": "custom_job_number"
   }
  ],
- "modified": "2024-05-16 07:14:14.727066",
+ "modified": "2024-05-22 14:49:22.910486",
  "modified_by": "Administrator",
  "module": "Logistics Management",
  "name": "Job Details",
