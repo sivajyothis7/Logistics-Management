@@ -12,7 +12,7 @@ frappe.ui.form.on("Job Details", {
             var totals = { grandTotal: 0, outstandingTotal: 0 };
             if (invoices && invoices.length > 0) {
                 invoices.forEach(function(invoice) {
-                    totals.grandTotal += invoice.grand_total;
+                    totals.grandTotal += invoice.base_grand_total;
                     if (includeOutstanding) {
                         totals.outstandingTotal += invoice.outstanding_amount;
                     }
@@ -29,7 +29,7 @@ frappe.ui.form.on("Job Details", {
                     custom_job_number: frm.doc.name,
                     docstatus: 1
                 },
-                fields: ['grand_total', 'outstanding_amount']
+                fields: ['base_grand_total', 'outstanding_amount']
             },
             callback: function(response) {
                 var salesInvoiceTotals = process_invoices(response.message, true);
@@ -42,7 +42,7 @@ frappe.ui.form.on("Job Details", {
                             custom_job_number: frm.doc.name,
                             docstatus: 1
                         },
-                        fields: ['grand_total', 'outstanding_amount']
+                        fields: ['base_grand_total', 'outstanding_amount']
                     },
                     callback: function(response) {
                         var purchaseInvoiceTotals = process_invoices(response.message, true);
