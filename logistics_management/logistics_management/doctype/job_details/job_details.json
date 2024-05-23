@@ -345,7 +345,7 @@
    "label": "Container No"
   },
   {
-   "depends_on": "eval:doc.mode_of_transport=='ROAD'",
+   "depends_on": "eval:doc.mode_of_transport=='LAND'",
    "fieldname": "vehicle_no",
    "fieldtype": "Data",
    "label": "Vehicle No"
@@ -363,7 +363,7 @@
    "label": "HBL Number "
   },
   {
-   "depends_on": "eval:doc.mode_of_transport=='ROAD'",
+   "depends_on": "eval:doc.mode_of_transport=='LAND'",
    "fieldname": "invoice_no",
    "fieldtype": "Data",
    "label": "Invoice No"
@@ -499,7 +499,7 @@
    "link_fieldname": "custom_job_number"
   }
  ],
- "modified": "2024-05-22 14:49:22.910486",
+ "modified": "2024-05-23 11:19:07.114700",
  "modified_by": "Administrator",
  "module": "Logistics Management",
  "name": "Job Details",
