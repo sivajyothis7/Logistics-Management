@@ -497,9 +497,15 @@
    "group": "Invoice Details",
    "link_doctype": "Purchase Invoice",
    "link_fieldname": "custom_job_number"
+  },
+  {
+   "custom": 1,
+   "group": "Invoice Details",
+   "link_doctype": "Journal Entry",
+   "link_fieldname": "custom_job_number"
   }
  ],
- "modified": "2024-05-23 11:19:07.114700",
+ "modified": "2024-05-24 18:08:29.545136",
  "modified_by": "Administrator",
  "module": "Logistics Management",
  "name": "Job Details",

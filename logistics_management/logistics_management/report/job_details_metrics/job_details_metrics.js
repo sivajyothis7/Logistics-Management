@@ -3,11 +3,14 @@ frappe.query_reports["Job Details Metrics"] = {
         {
             "fieldname": "job_details",
             "label": __("Job Details"),
-            "fieldtype": "Link",
+            "fieldtype": "MultiSelectList",
             "options": "Job Details",
             "reqd": 0,
             "default": "",
-            "width": "80"
+            "width": "80",
+            "get_data": function(txt) {
+                return frappe.db.get_link_options('Job Details', txt);
+            }
         }
     ],
 
@@ -31,7 +34,7 @@ frappe.query_reports["Job Details Metrics"] = {
             if (flt(value) === 0) {
                 value = `<span style="color:black">${value}</span>`;
             } else {
-                value = `<span style="color:red">${value}</span>`;
+                value = `<span style="color:green">${value}</span>`;
             }
         }
         // Highlight outstanding amount of purchase invoices in orange
