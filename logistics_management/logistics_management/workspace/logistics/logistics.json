@@ -24,7 +24,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-05-25 15:29:18.181331",
+ "modified": "2024-05-25 15:34:45.540646",
  "modified_by": "Administrator",
  "module": "Logistics Management",
  "name": "Logistics",
@@ -93,19 +93,19 @@
    "type": "DocType"
   },
   {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Job Details Metrics",
-   "link_to": "Job Details Metrics",
-   "type": "Report"
-  },
-  {
    "color": "Red",
    "doc_view": "List",
    "label": "Freight Location",
    "link_to": "Freight Location",
    "stats_filter": "[]",
    "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Job Details Metrics",
+   "link_to": "Job Details Metric",
+   "type": "Report"
   },
   {
    "color": "Grey",
