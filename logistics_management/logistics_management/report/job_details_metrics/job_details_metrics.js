@@ -29,16 +29,14 @@ frappe.query_reports["Job Details Metrics"] = {
                 value = `<span style="color:green">${value}</span>`;
             }
         }
-        // Highlight outstanding amount of sales invoices in green
-        if (column.fieldname == "outstanding_amount" && data.invoice_type === "Sales Invoice") {
+        if (column.fieldname == "sales_outstanding_amount") {
             if (flt(value) === 0) {
                 value = `<span style="color:black">${value}</span>`;
             } else {
                 value = `<span style="color:green">${value}</span>`;
             }
         }
-        // Highlight outstanding amount of purchase invoices in orange
-        if (column.fieldname == "outstanding_amount" && data.invoice_type === "Purchase Invoice") {
+        if (column.fieldname == "purchase_outstanding_amount") {
             if (flt(value) === 0) {
                 value = `<span style="color:black">${value}</span>`;
             } else {
