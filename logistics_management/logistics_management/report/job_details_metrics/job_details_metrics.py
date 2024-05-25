@@ -44,6 +44,7 @@ def execute(filters=None):
         for inv in sales_invoices:
             items = frappe.get_all('Sales Invoice Item', filters={'parent': inv.name}, fields=['item_code', 'qty', 'rate', 'amount'])
             for index, item in enumerate(items):
+                sales_outstanding_amount = flt(inv.outstanding_amount) if index == len(items) - 1 else 0
                 data.append({
                     'job_details': job.name,
                     'invoice_type': 'Sales Invoice',
@@ -54,34 +55,19 @@ def execute(filters=None):
                     'amount': item.amount,
                     'credit': flt(item.amount),
                     'debit': 0,
-                    'sales_outstanding_amount': '',
-                    'purchase_outstanding_amount': '',
+                    'sales_outstanding_amount': sales_outstanding_amount,
+                    'purchase_outstanding_amount': 0,
                     'profit_and_loss': ''
                 })
             total_credit += flt(inv.base_grand_total)
             total_sales_outstanding += flt(inv.outstanding_amount)
-
-            # Insert sales outstanding amount in the next row after the last item
-            data.append({
-                'job_details': job.name,
-                'invoice_type': '',
-                'invoice_id': '',
-                'item': '',
-                'quantity': '',
-                'rate': '',
-                'amount': '',
-                'credit': 0,
-                'debit': 0,
-                'sales_outstanding_amount': flt(inv.outstanding_amount),
-                'purchase_outstanding_amount': '',
-                'profit_and_loss': ''
-            })
 
         # Fetch and process Purchase Invoices
         purchase_invoices = frappe.get_all('Purchase Invoice', filters={'custom_job_number': job.name, 'docstatus': 1}, fields=['name', 'base_grand_total', 'outstanding_amount'])
         for inv in purchase_invoices:
             items = frappe.get_all('Purchase Invoice Item', filters={'parent': inv.name}, fields=['item_code', 'qty', 'rate', 'amount'])
             for index, item in enumerate(items):
+                purchase_outstanding_amount = flt(inv.outstanding_amount) if index == len(items) - 1 else 0
                 data.append({
                     'job_details': job.name,
                     'invoice_type': 'Purchase Invoice',
@@ -92,28 +78,12 @@ def execute(filters=None):
                     'amount': item.amount,
                     'credit': 0,
                     'debit': flt(item.amount),
-                    'sales_outstanding_amount': '',
-                    'purchase_outstanding_amount': '',
+                    'sales_outstanding_amount': 0,
+                    'purchase_outstanding_amount': purchase_outstanding_amount,
                     'profit_and_loss': ''
                 })
             total_debit += flt(inv.base_grand_total)
             total_purchase_outstanding += flt(inv.outstanding_amount)
-
-            # Insert purchase outstanding amount in the next row after the last item
-            data.append({
-                'job_details': job.name,
-                'invoice_type': '',
-                'invoice_id': '',
-                'item': '',
-                'quantity': '',
-                'rate': '',
-                'amount': '',
-                'credit': 0,
-                'debit': 0,
-                'sales_outstanding_amount': '',
-                'purchase_outstanding_amount': flt(inv.outstanding_amount),
-                'profit_and_loss': ''
-            })
 
         # Fetch and process Journal Entries (only debit items)
         journal_entries = frappe.get_all('Journal Entry', filters={'custom_job_number': job.name, 'docstatus': 1}, fields=['name'])
