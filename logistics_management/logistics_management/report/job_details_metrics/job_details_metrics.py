@@ -5,17 +5,17 @@ def execute(filters=None):
     columns, data = [], []
 
     columns = [
-        {"label": "Job Details", "fieldname": "job_details", "fieldtype": "Link", "options": "Job Details", "width": 100},
+        {"label": "Job Details", "fieldname": "job_details", "fieldtype": "Link", "options": "Job Details", "width": 125},
         {"label": "Invoice Type", "fieldname": "invoice_type", "fieldtype": "Data", "width": 135},
         {"label": "Invoice ID", "fieldname": "invoice_id", "fieldtype": "Dynamic Link", "options": "invoice_type", "width": 195},
-        {"label": "Item", "fieldname": "item", "fieldtype": "Data", "width": 150},
+        {"label": "Item", "fieldname": "item", "fieldtype": "Data", "width": 175},
         {"label": "Quantity", "fieldname": "quantity", "fieldtype": "Float", "width": 100},
         {"label": "Rate", "fieldname": "rate", "fieldtype": "Currency", "width": 100},
         {"label": "Amount", "fieldname": "amount", "fieldtype": "Currency", "width": 150},
         {"label": "Credit", "fieldname": "credit", "fieldtype": "Currency", "width": 150},
         {"label": "Debit", "fieldname": "debit", "fieldtype": "Currency", "width": 150},
-        {"label": "Sales Outstanding Amount", "fieldname": "sales_outstanding_amount", "fieldtype": "Currency", "width": 170},
-        {"label": "Purchase Outstanding Amount", "fieldname": "purchase_outstanding_amount", "fieldtype": "Currency", "width": 170},
+        {"label": "Sales Outstanding", "fieldname": "sales_outstanding_amount", "fieldtype": "Currency", "width": 170},
+        {"label": "Purchase Outstanding", "fieldname": "purchase_outstanding_amount", "fieldtype": "Currency", "width": 175},
         {"label": "Profit & Loss", "fieldname": "profit_and_loss", "fieldtype": "Currency", "width": 150},
     ]
 
@@ -43,8 +43,7 @@ def execute(filters=None):
         sales_invoices = frappe.get_all('Sales Invoice', filters={'custom_job_number': job.name, 'docstatus': 1}, fields=['name', 'base_grand_total', 'outstanding_amount'])
         for inv in sales_invoices:
             items = frappe.get_all('Sales Invoice Item', filters={'parent': inv.name}, fields=['item_code', 'qty', 'rate', 'amount'])
-            for index, item in enumerate(items):
-                sales_outstanding_amount = flt(inv.outstanding_amount) if index == len(items) - 1 else 0
+            for item in items:
                 data.append({
                     'job_details': job.name,
                     'invoice_type': 'Sales Invoice',
@@ -55,7 +54,7 @@ def execute(filters=None):
                     'amount': item.amount,
                     'credit': flt(item.amount),
                     'debit': 0,
-                    'sales_outstanding_amount': sales_outstanding_amount,
+                    'sales_outstanding_amount': flt(inv.outstanding_amount),
                     'purchase_outstanding_amount': 0,
                     'profit_and_loss': ''
                 })
@@ -66,8 +65,7 @@ def execute(filters=None):
         purchase_invoices = frappe.get_all('Purchase Invoice', filters={'custom_job_number': job.name, 'docstatus': 1}, fields=['name', 'base_grand_total', 'outstanding_amount'])
         for inv in purchase_invoices:
             items = frappe.get_all('Purchase Invoice Item', filters={'parent': inv.name}, fields=['item_code', 'qty', 'rate', 'amount'])
-            for index, item in enumerate(items):
-                purchase_outstanding_amount = flt(inv.outstanding_amount) if index == len(items) - 1 else 0
+            for item in items:
                 data.append({
                     'job_details': job.name,
                     'invoice_type': 'Purchase Invoice',
@@ -79,7 +77,7 @@ def execute(filters=None):
                     'credit': 0,
                     'debit': flt(item.amount),
                     'sales_outstanding_amount': 0,
-                    'purchase_outstanding_amount': purchase_outstanding_amount,
+                    'purchase_outstanding_amount': flt(inv.outstanding_amount),
                     'profit_and_loss': ''
                 })
             total_debit += flt(inv.base_grand_total)
