@@ -3,14 +3,14 @@ frappe.query_reports["Job Details Metrics"] = {
         {
             "fieldname": "job_details",
             "label": __("Job Details"),
-            "fieldtype": "MultiSelectList",
+            "fieldtype": "Link",
             "options": "Job Details",
             "reqd": 0,
             "default": "",
             "width": "80",
-            "get_data": function(txt) {
-                return frappe.db.get_link_options('Job Details', txt);
-            }
+            // "get_data": function(txt) {
+            //     return frappe.db.get_link_options('Job Details', txt);
+            // }
         }
     ],
 
