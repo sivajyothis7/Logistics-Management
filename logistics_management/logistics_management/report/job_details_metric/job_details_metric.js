@@ -1,4 +1,4 @@
-frappe.query_reports["Job Details Metrics"] = {
+frappe.query_reports["Job Details Metric"] = {
     "filters": [
         {
             "fieldname": "job_details",
