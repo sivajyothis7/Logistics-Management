@@ -97,7 +97,7 @@ frappe.ui.form.on("Job Details", {
 
 function add_custom_buttons(frm) {
     frm.add_custom_button(__('Job Ledger'), function() {
-        frappe.set_route('query-report', 'Job Details Metrics', {
+        frappe.set_route('query-report', 'Job Details Metric', {
             job_details: frm.doc.name
         });
     }, __('View'));
