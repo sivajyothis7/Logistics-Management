@@ -1,0 +1,84 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-05-28 13:44:14.605486",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "cn",
+  "nopkgs",
+  "mode_of_delivery",
+  "payment_type",
+  "remarks",
+  "column_break_xoyu",
+  "customer",
+  "pkg_type",
+  "invoice_no",
+  "way_bill"
+ ],
+ "fields": [
+  {
+   "fieldname": "cn",
+   "fieldtype": "Data",
+   "label": "CN "
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": " CUSTOMER",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "nopkgs",
+   "fieldtype": "Data",
+   "label": "NO.PKGS"
+  },
+  {
+   "fieldname": "pkg_type",
+   "fieldtype": "Data",
+   "label": "PKG TYPE"
+  },
+  {
+   "fieldname": "mode_of_delivery",
+   "fieldtype": "Data",
+   "label": "MODE OF DELIVERY"
+  },
+  {
+   "fieldname": "invoice_no",
+   "fieldtype": "Data",
+   "label": "INVOICE NO"
+  },
+  {
+   "fieldname": "payment_type",
+   "fieldtype": "Data",
+   "label": "PAYMENT TYPE"
+  },
+  {
+   "fieldname": "way_bill",
+   "fieldtype": "Attach",
+   "label": "WAY BILL"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "REMARKS"
+  },
+  {
+   "fieldname": "column_break_xoyu",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-05-28 14:10:07.893157",
+ "modified_by": "Administrator",
+ "module": "Logistics Management",
+ "name": "Console Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
