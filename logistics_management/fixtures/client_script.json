@@ -31,5 +31,27 @@
   "name": "test",
   "script": "// frappe.ui.form.on('Sales Order', {\n//     refresh: function(frm) {\n//         // Function to hide the edit button\n//         var hideEditButton = function() {\n//             cur_frm.fields_dict['items'].grid.wrapper.find('.btn-open-row').hide();\n//         };\n\n//         // Hide the edit button initially\n//         hideEditButton();\n\n//         // Bind the function to the grid-render event\n//         frm.fields_dict['items'].grid.on('grid-render', function() {\n//             hideEditButton(); // Hide the edit button whenever the grid is rendered\n//         });\n//     }\n// });\nfrappe.ui.form.on('Sales Order', {\n    refresh: function(frm) {\n        var hideButton = function() {\n            cur_frm.fields_dict['items'].grid.wrapper.find('.btn-open-row').hide();\n        };\n\n        hideButton();\n\n        $(document).on('grid-row-render', function(event) {\n            hideButton();\n        });\n    }\n});\n\n\n\n\n",
   "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Sales Invoice",
+  "enabled": 0,
+  "modified": "2024-05-30 08:27:41.172601",
+  "module": null,
+  "name": "Warehouse",
+  "script": "frappe.ui.form.on('Sales Order', {\n    currency: function(frm) {\n        // Fetch the warehouse associated with the selected currency\n        if(frm.doc.currency) {\n            frappe.call({\n                method: 'frappe.client.get_list',\n                args: {\n                    doctype: 'Warehouse',\n                    filters: {\n                        'custom_currency': frm.doc.currency\n                    },\n                    fields: ['name']\n                },\n                callback: function(response) {\n                    if(response && response.message && response.message.length > 0) {\n                        let warehouse = response.message[0].name;\n                        // Set the fetched warehouse in the appropriate field\n                        frm.set_value('warehouse', warehouse);\n                    } else {\n                        // Clear the warehouse field if no match is found\n                        frm.set_value('warehouse', '');\n                        frappe.msgprint(__('No warehouse found for the selected currency.'));\n                    }\n                }\n            });\n        } else {\n            // Clear the warehouse field if currency is not set\n            frm.set_value('warehouse', '');\n        }\n    }\n});\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Sales Order",
+  "enabled": 0,
+  "modified": "2024-05-30 08:41:05.110600",
+  "module": null,
+  "name": "Wh",
+  "script": "// frappe.ui.form.on('Sales Order', {\n//     currency: function(frm) {\n//         if(frm.doc.currency) {\n//             frappe.call({\n//                 method: 'frappe.client.get_list',\n//                 args: {\n//                     doctype: 'Warehouse',\n//                     filters: {\n//                         'custom_currency': frm.doc.currency\n//                     },\n//                     fields: ['name']\n//                 },\n//                 callback: function(response) {\n//                     if(response && response.message && response.message.length > 0) {\n//                         let warehouse = response.message[0].name;\n//                         frm.set_value('set_warehouse', warehouse);\n//                     } else {\n//                         frm.set_value('set_warehouse', '');\n//                         frappe.msgprint(__('No warehouse found for the selected currency.'));\n//                     }\n//                 }\n//             });\n//         } else {\n//             frm.set_value('set_warehouse', '');\n//         }\n//     }\n// });\n\n\nfrappe.ui.form.on('Sales Order', {\n    onload: function(frm) {\n        frm.set_query('set_warehouse', function() {\n            if (frm.doc.currency) {\n                return {\n                    filters: {\n                        'custom_currency': frm.doc.currency\n                    }\n                };\n            } else {\n                return {\n                    filters: {}\n                };\n            }\n        });\n    },\n    currency: function(frm) {\n        frm.set_value('set_warehouse', '');\n    }\n});\n",
+  "view": "Form"
  }
 ]

@@ -1,4 +1,6 @@
-frappe.query_reports["Job Detail Metrics"] = {
+// Copyright (c) 2024, siva and contributors
+// For license information, please see license.txt
+frappe.query_reports["Sales Person Report"] = {
     "filters": [
         {
             "fieldname": "job_details",

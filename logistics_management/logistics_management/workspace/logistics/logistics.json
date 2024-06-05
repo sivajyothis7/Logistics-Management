@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"pH01Y1Cyvr\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Logistics</span>\",\"col\":12}},{\"id\":\"OKCBlHqw8z\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Direct Shipping\",\"col\":3}},{\"id\":\"8iBBUnw8PP\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Details\",\"col\":3}},{\"id\":\"cET7zsnfst\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"POD\",\"col\":3}},{\"id\":\"yoLny7THH-\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"WdUtt0A3YD\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Track Shipping Order\",\"col\":3}},{\"id\":\"soeU5ZuNL5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Invoice\",\"col\":3}},{\"id\":\"fKb9geUNw4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Purchase Invoice\",\"col\":3}},{\"id\":\"KGsdDVs5Uf\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Journal Entry\",\"col\":3}},{\"id\":\"nPrXktfEE9\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"hZxOmpTiOV\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Freight Location\",\"col\":3}},{\"id\":\"qePT1OUYd4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Containers\",\"col\":3}},{\"id\":\"KTqxU7Il69\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Pricing  List\",\"col\":3}},{\"id\":\"lWeXXWe-Rd\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Warehouse Rental\",\"col\":3}},{\"id\":\"RSkLHCk4JV\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"iEXE6qojk5\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports</b></span>\",\"col\":12}},{\"id\":\"TX1JFFL6Le\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Details Metrics\",\"col\":3}},{\"id\":\"h33xSN04OO\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"General & Job Ledger Report\",\"col\":3}}]",
+ "content": "[{\"id\":\"pH01Y1Cyvr\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Logistics</span>\",\"col\":12}},{\"id\":\"OKCBlHqw8z\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Direct Shipping\",\"col\":3}},{\"id\":\"8iBBUnw8PP\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Details\",\"col\":3}},{\"id\":\"cET7zsnfst\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"POD\",\"col\":3}},{\"id\":\"yoLny7THH-\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"WdUtt0A3YD\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Track Shipping Order\",\"col\":3}},{\"id\":\"soeU5ZuNL5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Invoice\",\"col\":3}},{\"id\":\"fKb9geUNw4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Purchase Invoice\",\"col\":3}},{\"id\":\"KGsdDVs5Uf\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Journal Entry\",\"col\":3}},{\"id\":\"nPrXktfEE9\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"hZxOmpTiOV\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Freight Location\",\"col\":3}},{\"id\":\"qePT1OUYd4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Containers\",\"col\":3}},{\"id\":\"KTqxU7Il69\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Pricing  List\",\"col\":3}},{\"id\":\"lWeXXWe-Rd\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Warehouse Rental\",\"col\":3}},{\"id\":\"RSkLHCk4JV\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"iEXE6qojk5\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports</b></span>\",\"col\":12}},{\"id\":\"TX1JFFL6Le\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Details Metrics\",\"col\":3}},{\"id\":\"xxYvAMG8Zn\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Person Report\",\"col\":3}},{\"id\":\"h33xSN04OO\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"General & Job Ledger Report\",\"col\":3}},{\"id\":\"PzOKmQZYQb\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"HADl_frXlN\",\"type\":\"card\",\"data\":{\"card_name\":\"Financial Reports\",\"col\":4}}]",
  "creation": "2024-03-12 07:31:55.092037",
  "custom_blocks": [],
  "docstatus": 0,
@@ -22,9 +22,48 @@
    "link_type": "Report",
    "onboard": 1,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Financial Reports",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Profit and Loss Statement",
+   "link_count": 0,
+   "link_to": "Profit and Loss Statement",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Balance Sheet",
+   "link_count": 0,
+   "link_to": "Balance Sheet",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Cash Flow",
+   "link_count": 0,
+   "link_to": "Cash Flow",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-05-25 15:34:45.540646",
+ "modified": "2024-06-05 12:43:45.604575",
  "modified_by": "Administrator",
  "module": "Logistics Management",
  "name": "Logistics",
@@ -75,6 +114,13 @@
    "link_to": "Sales Invoice",
    "stats_filter": "[]",
    "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Sales Person Report",
+   "link_to": "Sales Person Report",
+   "type": "Report"
   },
   {
    "color": "Orange",

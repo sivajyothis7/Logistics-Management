@@ -1,3 +1,6 @@
+# Copyright (c) 2024, siva and contributors
+# For license information, please see license.txt
+
 from frappe.utils import flt
 import frappe
 
@@ -15,8 +18,8 @@ def execute(filters=None):
         {"label": "Amount", "fieldname": "amount", "fieldtype": "Currency", "width": 150},
         {"label": "Credit", "fieldname": "credit", "fieldtype": "Currency", "width": 150},
         {"label": "Debit", "fieldname": "debit", "fieldtype": "Currency", "width": 150},
-        {"label": "Sales Outstanding", "fieldname": "sales_outstanding_amount", "fieldtype": "Currency", "width": 170},
-        {"label": "Purchase Outstanding", "fieldname": "purchase_outstanding_amount", "fieldtype": "Currency", "width": 175},
+        # {"label": "Sales Outstanding", "fieldname": "sales_outstanding_amount", "fieldtype": "Currency", "width": 170},
+        # {"label": "Purchase Outstanding", "fieldname": "purchase_outstanding_amount", "fieldtype": "Currency", "width": 175},
         {"label": "Profit & Loss", "fieldname": "profit_and_loss", "fieldtype": "Currency", "width": 150},
     ]
 
