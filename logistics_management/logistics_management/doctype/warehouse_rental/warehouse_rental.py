@@ -31,7 +31,7 @@ def generate_invoice(docname):
             invoice = frappe.get_doc({
                 "doctype": "Sales Invoice",
                 "customer": doc.customer,
-                # "custom_job_number": doc.job_details,
+                "custom_job_number": doc.job_details,
                 "posting_date": frappe.utils.today(),
                 "due_date": frappe.utils.add_days(frappe.utils.today(), 30),
                 "items": [
