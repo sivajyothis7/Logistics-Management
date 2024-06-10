@@ -15,6 +15,7 @@
   "vehicle_no",
   "column_break_mbo6",
   "mode_of_transport",
+  "shipment_mode",
   "hawbl_number",
   "hbl_number",
   "invoice_no",
@@ -309,7 +310,7 @@
    "fieldname": "job_type",
    "fieldtype": "Select",
    "label": "Job Type",
-   "options": "\nIMPORT\nEXPORT\nRE-EXPORT\nCONSOLE\nWARE HOUSING\nLCL"
+   "options": "\nGENERAL\nCONSOLE\nLCL\nWAREHOUSING"
   },
   {
    "fieldname": "section_break_eohf",
@@ -487,6 +488,12 @@
    "fieldtype": "Table",
    "label": "Console Shipment",
    "options": "Console Table"
+  },
+  {
+   "fieldname": "shipment_mode",
+   "fieldtype": "Select",
+   "label": "Shipment Mode",
+   "options": "\nIMPORT\nEXPORT\nRE-EXPORT\nLOCAL"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -518,7 +525,7 @@
    "link_fieldname": "custom_job_number"
   }
  ],
- "modified": "2024-05-28 14:03:51.100237",
+ "modified": "2024-06-09 09:04:42.484947",
  "modified_by": "Administrator",
  "module": "Logistics Management",
  "name": "Job Details",
