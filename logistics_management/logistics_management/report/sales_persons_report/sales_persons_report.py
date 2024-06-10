@@ -4,7 +4,6 @@ import frappe
 def execute(filters=None):
     columns, data, chart = [], [], None
 
-    # Define columns
     columns = [
         {"label": "Job Details", "fieldname": "job_details", "fieldtype": "Link", "options": "Job Details", "width": 250},
         {"label": "Sales Person", "fieldname": "sales_person", "fieldtype": "Link", "options": "Sales Person", "width": 150},
@@ -13,13 +12,11 @@ def execute(filters=None):
         {"label": "Profit & Loss", "fieldname": "profit_and_loss", "fieldtype": "Currency", "width": 150},
     ]
 
-    # Get filters
     job_details_filter = filters.get('job_details') if filters else None
     sales_person_filter = filters.get('sales_person') if filters else None
     from_date = filters.get('from_date') if filters else None
     to_date = filters.get('to_date') if filters else None
 
-    # Fetch job details based on filters
     job_details_filters = {}
     if job_details_filter:
         job_details_filters['name'] = ['in', job_details_filter]
@@ -91,7 +88,6 @@ def execute(filters=None):
             overall_credit_total += total_credit
             overall_debit_total += total_debit
 
-            # Prepare chart data
             invoice_data.append({
                 'x': job.name,
                 'y': total_credit
