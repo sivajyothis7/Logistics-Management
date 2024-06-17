@@ -123,7 +123,9 @@ fixtures = [{
 # override_doctype_class = {
 # 	"ToDo": "custom_app.overrides.CustomToDo"
 # }
-
+override_doctype_class = {
+    "Report": "logistics_management.overrides.CustomReport"
+}
 # Document Events
 # ---------------
 # Hook on document methods and events
@@ -231,7 +233,9 @@ doc_events = {
 # auth_hooks = [
 # 	"logistics_management.auth.validate"
 # ]
-
+report_override_js = {
+	"Job Card Summary": "reports/js/custom_job_card_summary.js",
+}
 # Automatically update python controller files with type annotations for this app.
 # export_python_type_annotations = True
 

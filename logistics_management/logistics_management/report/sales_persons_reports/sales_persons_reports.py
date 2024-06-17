@@ -5,8 +5,10 @@ def execute(filters=None):
     columns, data, chart = [], [], None
 
     columns = [
-        {"label": "Job Details", "fieldname": "job_details", "fieldtype": "Link", "options": "Job Details", "width": 250},
+        {"label": "Job Details", "fieldname": "job_details", "fieldtype": "Link", "options": "Job Details", "width": 200},
+        {"label": "Customer", "fieldname": "customer", "fieldtype": "Link", "options": "Customer", "width": 150},
         {"label": "Sales Person", "fieldname": "sales_person", "fieldtype": "Link", "options": "Sales Person", "width": 150},
+        {"label": "Sales Invoices", "fieldname": "sales_invoices", "fieldtype": "Data", "width": 270},
         {"label": "Total Credit", "fieldname": "total_credit", "fieldtype": "Currency", "width": 150},
         {"label": "Total Debit", "fieldname": "total_debit", "fieldtype": "Currency", "width": 150},
         {"label": "Profit & Loss", "fieldname": "profit_and_loss", "fieldtype": "Currency", "width": 150},
@@ -25,7 +27,7 @@ def execute(filters=None):
     if from_date and to_date:
         job_details_filters['date'] = ['between', [from_date, to_date]]  
 
-    job_details_list = frappe.get_all('Job Details', filters=job_details_filters, fields=['name', 'sales_person'])
+    job_details_list = frappe.get_all('Job Details', filters=job_details_filters, fields=['name', 'sales_person', 'job_id'])
 
     overall_credit_total = 0
     overall_debit_total = 0
@@ -40,14 +42,17 @@ def execute(filters=None):
     for job in job_details_list:
         total_credit = 0
         total_debit = 0
+        customer = job.job_id
+        sales_invoices_list = []
 
         # Fetch and process Sales Invoices
         sales_invoices_filters = {'custom_job_number': job.name, 'docstatus': 1}
 
         sales_invoices = frappe.get_all('Sales Invoice', filters=sales_invoices_filters, fields=['name', 'base_grand_total'])
-
         if sales_invoices:
             has_data = True
+            sales_invoices_list = [inv.name for inv in sales_invoices]
+
         for inv in sales_invoices:
             total_credit += flt(inv.base_grand_total)
 
@@ -79,7 +84,9 @@ def execute(filters=None):
             # Append totals for each job
             data.append({
                 'job_details': job.name,
+                'customer': customer,
                 'sales_person': job.sales_person,
+                'sales_invoices': ', '.join(sales_invoices_list),
                 'total_credit': total_credit,
                 'total_debit': total_debit,
                 'profit_and_loss': profit_and_loss
@@ -109,7 +116,9 @@ def execute(filters=None):
     if has_data:
         data.append({
             'job_details': 'Overall Totals',
+            'customer': '',
             'sales_person': '',
+            'sales_invoices': '',
             'total_credit': overall_credit_total,
             'total_debit': overall_debit_total,
             'profit_and_loss': overall_profit_and_loss
