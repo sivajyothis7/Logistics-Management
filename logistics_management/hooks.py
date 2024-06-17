@@ -176,7 +176,9 @@ doc_events = {
 # override_whitelisted_methods = {
 # 	"frappe.desk.doctype.event.event.get_events": "logistics_management.event.get_events"
 # }
-#
+override_whitelisted_methods = {
+    "frappe.desk.query_report.get_script": "logistics_management.overrides.get_script"
+}
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps
@@ -235,6 +237,10 @@ doc_events = {
 # ]
 report_override_js = {
 	"Job Card Summary": "reports/js/custom_job_card_summary.js",
+}
+
+report_override_html = {
+	"Accounts Receivable": "reports/overrides/html/custom_accounts_receivable.html"
 }
 # Automatically update python controller files with type annotations for this app.
 # export_python_type_annotations = True
