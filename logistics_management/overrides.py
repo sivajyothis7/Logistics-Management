@@ -1,5 +1,4 @@
-# Copyright (c) 2023, NiyazRazak and contributors
-# For license information, please see license.txt
+
 
 import os
 
