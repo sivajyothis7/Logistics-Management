@@ -309,6 +309,7 @@
   {
    "fieldname": "job_type",
    "fieldtype": "Select",
+   "in_standard_filter": 1,
    "label": "Job Type",
    "options": "\nGENERAL\nCONSOLE\nLCL\nWAREHOUSING"
   },
@@ -401,6 +402,7 @@
   {
    "fieldname": "eta_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "ETA (DATE) "
   },
   {
@@ -492,6 +494,7 @@
   {
    "fieldname": "shipment_mode",
    "fieldtype": "Select",
+   "in_standard_filter": 1,
    "label": "Shipment Mode",
    "options": "\nIMPORT\nEXPORT\nRE-EXPORT\nLOCAL"
   }
@@ -525,7 +528,7 @@
    "link_fieldname": "custom_job_number"
   }
  ],
- "modified": "2024-06-09 09:04:42.484947",
+ "modified": "2024-06-26 10:34:37.438860",
  "modified_by": "Administrator",
  "module": "Logistics Management",
  "name": "Job Details",
